@@ -4,3 +4,12 @@ word_list = ["banana","pear","apple","grape","mango","watermelon","strawberry","
 print(word_list)
 
 # %%
+import random
+word = random.choice(word_list)
+print (word)
+
+
+
+
+
+# %%
