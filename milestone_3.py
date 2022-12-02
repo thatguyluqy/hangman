@@ -3,7 +3,7 @@
 #must be one character long and a letter of the alphabet
 #%%
 guess = input("Enter your guess") 
-while len(guess) !=1 or guess.isalpha()!=True:
+while len(guess) >1 or guess.isnumeric()==True:
  guess = input("Invalid letter. Please, enter a single alphabetical character")
  
 
