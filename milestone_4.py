@@ -1,13 +1,12 @@
-
+import random
 class Hangman:
     
     def __init__(self,word_list,num_lives=5):
-        import random
         self.word = random.choice(word_list)
         self.list_of_guesses = []
         self.word_list = word_list
         self.num_lives = num_lives
-        self.word_guessed = self.word.replace(self.word[0:], "_"* (len(self.word)))
+        self.word_guessed = self.word.replace(self.word[0:], "'_'"* (len(self.word)))
         self.num_list = "".join(set(self.word)).lower()
 
     
@@ -30,4 +29,4 @@ class Hangman:
 
 
 game2 = Hangman(["banana","pear","apple","grape","mango","watermelon","strawberry","lychee"])
-game2.ask_for_input()
+print(game2.word_guessed)
