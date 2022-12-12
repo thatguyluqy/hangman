@@ -23,6 +23,7 @@ class Hangman:
                  self.check_guess(self.guess)
                  self.list_of_guesses.append(self.guess)
                  self.num_lives -= 1
+                 break
                  
 
     
