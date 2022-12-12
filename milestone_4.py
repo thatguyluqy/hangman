@@ -8,6 +8,7 @@ class Hangman:
         self.num_lives = num_lives
         self.word_guessed = list(self.word.replace(self.word[0:], "_"* (len(self.word))))
         self.num_list = "".join(set(self.word)).lower()
+        self.num_letters = len(set(self.word))
 
     
     def ask_for_input(self):
@@ -30,3 +31,6 @@ class Hangman:
 
 game2 = Hangman(["banana","pear","apple","grape","mango","watermelon","strawberry","lychee"])
 print(game2.word_guessed)
+type(game2.word_guessed)
+print(game2.word)
+print(game2.num_letters)
