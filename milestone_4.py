@@ -14,24 +14,24 @@ class Hangman:
     def ask_for_input(self):
         guess = ""
         while True:
-            self.guess = input(" Enter a single letter: ")
-            if len(self.guess) != 1 or self.guess.isnumeric():
+            guess = input(" Enter a single letter: ")
+            if len(guess) != 1 or guess.isnumeric():
                  print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
                  print ("You already tried that letter!.")
             else:
-                 self.check_guess(self.guess)
-                 self.list_of_guesses.append(self.guess)
+                 self.check_guess(guess)
+                 self.list_of_guesses.append(guess)
                  self.num_lives -= 1
                  break
                  
 
     
     def check_guess(self,guess):
-        if self.guess in self.word:
-            print(f"Good guess! {self.guess} is in the word.")
+        if guess in self.word:
+            print(f"Good guess! {guess} is in the word.")
         else:
-            print(f"sorry {self.guess} isnt in the word")
+            print(f"sorry {guess} isnt in the word")
 
 
 game2 = Hangman(["banana","pear","apple","grape","mango","watermelon","strawberry","lychee"])
@@ -39,3 +39,4 @@ print(game2.word_guessed)
 type(game2.word_guessed)
 print(game2.word)
 print(game2.num_letters)
+
