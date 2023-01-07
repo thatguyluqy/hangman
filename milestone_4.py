@@ -22,7 +22,6 @@ class Hangman:
             else:
                  self.check_guess(guess)
                  self.list_of_guesses.append(guess)
-                 self.num_lives -= 1
                  break
                  
 
@@ -30,8 +29,13 @@ class Hangman:
     def check_guess(self,guess):
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
+            for i, letter in enumerate(self.word):
+                if letter == guess:
+                    self.word_guessed[i] = guess
         else:
             print(f"sorry {guess} isnt in the word")
+            self.num_lives -= 1
+            
 
 
 game2 = Hangman(["banana","pear","apple","grape","mango","watermelon","strawberry","lychee"])
