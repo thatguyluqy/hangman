@@ -38,16 +38,17 @@ class Hangman:
             print(f"You have {self.num_lives} lives left.")
         self.list_of_guesses.append(guess)
 
-    def play_game(self,word_list,num_lives=5):
-        game = Hangman(word_list) # Step 1
-        while True: # Step 3
-            if game.num_lives == 0: # Step 3.1
-                print("You lost!")
-                break
-            elif game.num_letters > 0: # Step 3.2
-                 game.ask_for_input()
-            else: # Step 3.3
-                print("Congratulations. You won the game!")
-                break
 
-Hangman.play_game((["banana","pear","apple","grape","mango","watermelon","strawberry","lychee"]))
+def play_game(word_list):
+    game = Hangman(word_list) 
+    while True: 
+        if game.num_lives == 0: 
+            print("You lost!")
+            break
+        elif game.num_letters > 0: 
+            game.ask_for_input()
+        else: 
+            print("Congratulations. You won the game!")
+            break
+
+play_game(["banana","pear","apple","grape","mango","watermelon","strawberry","lychee"])
