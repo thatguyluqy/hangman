@@ -1,7 +1,7 @@
 import random
 class Hangman:
     
-    def __init__(self,word_list,num_lives=5):
+    def __init__(self,word_list,num_lives):
         self.word = random.choice(word_list)
         self.list_of_guesses = []
         self.word_list = word_list
@@ -40,7 +40,7 @@ class Hangman:
 
 
 def play_game(word_list):
-    game = Hangman(word_list) 
+    game = Hangman(word_list,num_lives=5) 
     while True: 
         if game.num_lives == 0: 
             print("You lost!")
